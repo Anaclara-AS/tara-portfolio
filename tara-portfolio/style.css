@@ -1,0 +1,382 @@
+:root {
+  --primary-color: #F9C435;
+  --text-clor: #1F1000;
+  --tertiary-color: rgb(255, 187, 51);
+  --hover-color-line: rgba(118, 58, 191, 0.25);
+  --background-color: var(--primary-color);
+  --typewriterSpeed: 2s;
+  --typewriterCharacters: 21; /* Number of characters in your h1 text */
+  --primary-font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--primary-font-family);
+  text-align: left;
+}
+
+body {
+  background: linear-gradient(315deg, rgb(249, 196, 53) 24%, rgb(255, 188, 91) 38%, rgb(255, 195, 136) 68%, rgb(255, 202, 165) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  text-align: left;
+  position: relative;
+}
+
+section.one {
+  position: relative; /* Ensures the pseudo-element is positioned correctly within this section */
+}
+
+section.one::after {
+  content: '';
+  position: absolute; /* Keep it absolute to position it correctly */
+  top: 0;
+  right: 0;
+  width: 500px; /* Adjust width as needed */
+  height: 100vh; /* Cover the full height of the section */
+  background-image: url("imgs/img-main.svg"); /* Background image for the first section */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain; /* Adjust as needed */
+  z-index: -1; /* Make sure it stays behind other content */
+}
+
+section.two, section.three {
+  background: transparent; /* Explicitly set background to transparent */
+  position: relative; /* Ensure they are positioned normally */
+}
+
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.highlight {
+  font-family: var(--primary-font-family);
+  font-size: 1.5em;
+  color: #6A3ABF; /* Change this to the color you want */
+  font-weight: bold; /* You can change the font weight or style */
+  font-style: italic; /* Optional: Change font style */
+  text-align: left; /* Align subtitle to the left */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content; /* Adjust as needed */
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the left */
+  padding-left: 100px; /* Add padding to move the content away from the edge */
+}
+
+.typewriter-container {
+  width: 100%;
+  max-width: 606px;
+  margin: 0; /* Remove auto-centering */
+  text-align: left; /* Ensure text inside is aligned left */
+}
+
+.typewriter {
+  color: var(--text-clor);
+  font-size: 3em;
+  font-family: var(--primary-font-family);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.125em solid var(--primary-color);
+  animation: typing var(--typewriterSpeed) steps(var(--typewriterCharacters), end), blink-caret 0.75s step-end infinite;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: left; /* Align the typewriter text to the left */
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: var(--text-color);
+  }
+}
+
+.subtitle-container {
+  margin-top: 1em;
+}
+
+highlight {
+  color: #6A3ABF; /* Custom color */
+  font-weight: bold; /* Bold text */
+  font-style: italic; /* Italic text */
+  font-size: 1.5en;
+}
+
+/* Subtitle Styles */
+.subtitle-container {
+  margin-top: 1em;
+  text-align: left; /* Align the typewriter text to the left */
+}
+
+.subtitle {
+  color: var(--text-color);
+  font-family: var(--primary-font-family);
+  font-size: 1.5em;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 0.5s) forwards;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: left; /* Align subtitle to the left */
+}
+
+
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.header-main {
+  width: 100%;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--gradient-colors);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.header-main-logo {
+  width: fit-content;
+  height: 100%;
+  padding-top: 24px;
+  padding-left: 36px;
+  display: flex;
+  z-index: 1001;
+}
+
+.header-main-logo img {
+  height: 50px;
+  z-index: 1001;
+}
+
+.header-main-nav {
+  width: fit-content;
+  height: 100%;
+  color: var(--secondary-color);
+  padding-left: 24px;
+  padding-right: 36px;
+  padding-top: 40px;
+  z-index: 1001;
+  margin-left: auto;
+}
+
+.header-main-nav ul {
+  list-style: none;
+}
+
+.header-main-nav ul li {
+  display: inline;
+  float: left;
+}
+
+.header-main-nav ul li a {
+  padding: 0 10px;
+  font-family: var(--primary-font-family);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  position: relative;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.header-main-nav ul li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--hover-color-line);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.header-main-nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+.header-main-nav ul li a:hover {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.waves {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
+}
+
+
+.two {
+    padding-top: 100px;
+    text-align: center;
+}
+
+h2{
+  padding-bottom: 100px;
+  font-size: 3em;
+  font-weight: bold;
+  color: #6A3ABF;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures no overflow from rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; /* Fixed width for consistency */
+    padding: 20px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    padding: 0 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.project-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #F9C435; /* Primary color */
+    color: #1F1000; /* Text color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+}
+
+.project-card:hover .project-link {
+    background-color: #6A3ABF; /* Change link color on hover */
+    color: white; /* Change text color on hover */
+}
