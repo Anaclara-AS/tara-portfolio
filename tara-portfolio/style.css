@@ -49,20 +49,13 @@ section.one::after {
   z-index: -1; /* Make sure it stays behind other content */
 }
 
+iframe{
+  padding: 100px
+}
+
 section.two, section.three {
   background: transparent; /* Explicitly set background to transparent */
-  position: relative; /* Ensure they are positioned normally */
-  content:'';
-  top: 0;
-  right: 0;
-  width: 500px; /* Adjust width as needed */
-  height: 100vh; /* Cover the full height of the section */
-  background-image: url("imgs/img-main.svg"); /* Background image for the first section */
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain; /* Adjust as needed */
-  z-index: -1; /* Make sure it stays behind other content */
-  
+  position: relative; /* Ensure they are positioned normally */  
 }
 
 main {
