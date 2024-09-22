@@ -38,7 +38,7 @@ section.one::after {
   right: 0;
   width: 500px; /* Adjust width as needed */
   height: 100vh; /* Cover the full height of the section */
-  background-image: url("imgs/img-main.svg"); /* Background image for the first section */
+  background-image: url("tara-portfolio/imgs/img-main.svg"); /* Background image for the first section */
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain; /* Adjust as needed */
