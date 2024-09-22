@@ -49,11 +49,29 @@ section.one::after {
   z-index: -1; /* Make sure it stays behind other content */
 }
 
-section.three::after {
-  content: '';
-  position: absolute; /* Keep it absolute to position it correctly *
-  }
+section.three {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Make sure the section takes up full viewport height */
+    padding: 50px; /* Adds padding around the section */
+    position: relative;
+    background: transparent; /* Keeps section background transparent */
+}
 
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Adjusts space around the iframe */
+    border: none; /* Remove any default borders */
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Adds rounded corners to iframe */
+}
 section.two, section.three {
   background: transparent; /* Explicitly set background to transparent */
   position: relative; /* Ensure they are positioned normally */  
