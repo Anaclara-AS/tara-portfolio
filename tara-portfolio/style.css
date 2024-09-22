@@ -27,6 +27,10 @@ body {
   position: relative;
 }
 
+section.two{
+  padding: 100px;
+}
+
 section.one {
   position: relative; /* Ensures the pseudo-element is positioned correctly within this section */
 }
